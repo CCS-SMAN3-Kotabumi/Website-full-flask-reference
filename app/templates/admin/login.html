@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="wrap" style="max-width:480px; margin:80px auto;">
+  <div class="form-card" style="padding:32px;">
+    <h2 style="margin-bottom:6px;">Login Admin</h2>
+    <p style="color:var(--muted); font-size:14px; margin-bottom:22px;">CCS — Computer Club Smanthree</p>
+    <form method="POST" action="{{ url_for('admin.login') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="username">Nama user</label>
+        <input id="username" name="username" type="text" required autofocus>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required>
+      </div>
+      <button type="submit" class="btn form-submit">Log in</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

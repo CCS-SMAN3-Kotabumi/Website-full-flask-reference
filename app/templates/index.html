@@ -1,0 +1,236 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-line"><span class="dot"></span><span>Computer Club Smanthree · Ekstrakurikuler Komputer</span></div>
+      <h1 class="hero-title">Belajar Pemrograman dan Desain melalui <span class="hl">Praktik Nyata</span></h1>
+      <p class="hero-sub">CCS membina siswa untuk mengembangkan kemampuan pemrograman dan desain digital secara terstruktur, sebagai bekal berkompetisi maupun berkarya.</p>
+      <div class="hero-cta">
+        <a href="#daftar" class="btn">Daftar Anggota Baru</a>
+        <a href="#galeri" class="btn btn-ghost">Lihat Galeri Kegiatan</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="terminal">
+        <div class="terminal-bar"><span></span><span></span><span></span><span class="fname">app.py</span></div>
+        <div class="terminal-body">
+<div><span class="c1">def</span> <span class="c3">buat</span>(ide):</div>
+<div>&nbsp;&nbsp;<span class="cmt"># dari CCS untuk sekolah</span></div>
+<div>&nbsp;&nbsp;<span class="c1">return</span> ide.<span class="c3">jadi_nyata</span>()</div>
+<div>&nbsp;</div>
+<div>buat(<span class="c2">"proyek kamu"</span>)<span class="cursor"></span></div>
+        </div>
+      </div>
+      <div class="design-card">
+        <div class="dtop"><span>desain.canva</span><span>100%</span></div>
+        <div class="swatches"><i></i><i></i><i></i><i></i></div>
+        <div class="frame-mock"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="num" data-count="86">0</div><div class="lbl">Anggota aktif</div></div>
+    <div class="stat"><div class="num" data-count="14">0</div><div class="lbl">Penghargaan diraih</div></div>
+    <div class="stat"><div class="num" data-count="22">0</div><div class="lbl">Proyek dihasilkan</div></div>
+    <div class="stat"><div class="num" data-count="6">0</div><div class="lbl">Tahun berjalan</div></div>
+  </div>
+</div>
+
+<section id="program">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Program</div>
+      <h2>Bidang Pembinaan CCS</h2>
+      <p>Kegiatan CCS terbagi ke dalam dua bidang utama. Anggota dapat memilih salah satu sesuai minat, atau mengikuti keduanya melalui proyek gabungan.</p>
+    </div>
+    <div class="programs">
+      <div class="pcard reveal">
+        <div class="tag">Pemrograman</div>
+        <h3>Pemrograman</h3>
+        <p>Pembinaan logika komputasi hingga penyelesaian soal algoritma untuk kompetisi OSN Bidang Informatika.</p>
+        <ul>
+          <li>Dasar logika komputasi dan algoritma</li>
+          <li>Python untuk pemula</li>
+          <li>C++ dan persiapan OSN Informatika</li>
+        </ul>
+      </div>
+      <div class="pcard reveal">
+        <div class="tag">Desain</div>
+        <h3>Desain dan Multimedia</h3>
+        <p>Pembinaan kemampuan merancang tampilan visual yang komunikatif, dari materi cetak hingga konten digital.</p>
+        <ul>
+          <li>Desain grafis dan identitas visual dengan Canva</li>
+          <li>Desain poster dan konten media sosial</li>
+          <li>Penyuntingan foto dan video kegiatan sekolah</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benefit" style="background:var(--tint2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Manfaat</div>
+      <h2>Manfaat Mengikuti CCS</h2>
+    </div>
+    <div class="benefits">
+      <div class="bcard reveal"><div class="bicon">&#128193;</div><h3>Portofolio Karya</h3><p>Proyek yang dihasilkan selama mengikuti CCS dapat menjadi bekal portofolio untuk pendaftaran ke perguruan tinggi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="jadwal">
+  <div class="wrap jadwal-wrap">
+    <div class="reveal">
+      <div class="kicker">Jadwal</div>
+      <h2 style="margin-bottom:14px;">Jadwal Kegiatan</h2>
+      <p class="jadwal-note">Latihan rutin CCS berlangsung setiap pekan di Lab Komputer 2.</p>
+    </div>
+    <div class="jadwal-card reveal">
+      <div class="jadwal-row"><span class="day">Rabu</span><span class="time">15.10 – 16.30 · Lab Komputer 2</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="pengurus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Pengurus</div>
+      <h2>Struktur Pengurus</h2>
+      <p>Posisi Sekretaris dan Bendahara masih akan diumumkan menyusul.</p>
+    </div>
+    <div class="org-chart reveal">
+      <div class="org-top">
+        <div class="org-card lead"><div class="role">Ketua</div><div class="name">Zendra</div></div>
+        <div class="org-card"><div class="role">Wakil Ketua</div><div class="name">Rafi</div></div>
+      </div>
+      <div class="org-divisions">
+        <div class="org-card"><div class="role">Koordinator Pemrograman</div><div class="name">Hafiz</div></div>
+        <div class="org-card"><div class="role">Koordinator Desain</div><div class="name">Atha</div></div>
+        <div class="org-card"><div class="role">Sekretaris dan Bendahara</div><div class="name">Segera diumumkan</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--tint2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap video-wrap">
+    <div class="reveal">
+      <div class="kicker">Dokumentasi</div>
+      <h2 style="margin-bottom:14px;">Dokumentasi Kegiatan</h2>
+      <p style="color:var(--muted); font-size:15px;">Cuplikan singkat suasana latihan dan kegiatan CCS. Video akan diperbarui setelah dokumentasi resmi tersedia.</p>
+    </div>
+    <div class="video-frame reveal" role="button" tabindex="0" aria-label="Putar video (placeholder)">
+      <div class="play-btn">&#9658;</div>
+      <span class="vtag">cuplikan-ccs.mp4 · placeholder</span>
+    </div>
+  </div>
+</section>
+
+<section id="galeri" class="gallery-section">
+  <div class="wrap">
+    <div class="section-head flex reveal">
+      <div>
+        <div class="kicker">Galeri</div>
+        <h2>Galeri Kegiatan</h2>
+      </div>
+      <a href="#" class="btn-ghost btn" style="padding:10px 18px;">Lihat Semua</a>
+    </div>
+    <div class="bento">
+      <div class="gitem big reveal"><span>Kegiatan 1</span></div>
+      <div class="gitem reveal"><span>Kegiatan 2</span></div>
+      <div class="gitem reveal"><span>Kegiatan 3</span></div>
+      <div class="gitem reveal"><span>Kegiatan 4</span></div>
+      <div class="gitem reveal"><span>Kegiatan 5</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">FAQ</div>
+      <h2>Pertanyaan yang Sering Diajukan</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Apakah perlu pengalaman pemrograman sebelumnya? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Tidak. CCS terbuka bagi seluruh siswa, termasuk yang belum pernah mempelajari pemrograman. Materi disampaikan mulai dari dasar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Apakah perlu membawa laptop sendiri? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Tidak wajib. Kegiatan berlangsung di Lab Komputer 2 yang telah dilengkapi perangkat komputer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Apakah bisa diikuti siswa di luar jurusan IPA? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Bisa. CCS terbuka bagi siswa dari seluruh jurusan, tidak terbatas pada jurusan IPA.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Apakah ada biaya pendaftaran? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Pendaftaran CCS tidak dipungut biaya. Anggota hanya dikenakan kas sebesar Rp2.000 setiap pertemuan.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+<div style="max-width:560px; margin:0 auto 28px;">
+{% for category, message in messages %}
+  <div style="background:{% if category == "error" %}var(--error){% else %}var(--success){% endif %}; color:white; padding:12px 16px; border-radius:var(--radius-md); margin-bottom:8px; font-size:14px; font-weight:600;">{{ message }}</div>
+{% endfor %}
+</div>
+{% endif %}
+{% endwith %}
+<section id="daftar">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Pendaftaran</div>
+      <h2>Formulir Pendaftaran Anggota</h2>
+      <p>Lengkapi data berikut untuk mendaftar sebagai anggota CCS.</p>
+    </div>
+    <div class="form-wrap">
+      <form class="form-card reveal" action="{{ url_for('registration.daftar') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="field-row">
+          <div class="field"><label for="nama">Nama lengkap</label><input id="nama" name="nama" type="text" placeholder="Nama lengkap" required></div>
+          <div class="field"><label for="kelas">Kelas</label><input id="kelas" name="kelas" type="text" placeholder="Contoh: XI IPA 2" required></div>
+        </div>
+        <div class="field">
+          <label for="minat">Minat utama</label>
+          <select id="minat" name="minat" required>
+            <option>Pemrograman (Python / C++ / OSN)</option>
+            <option>Desain dan Multimedia</option>
+            <option>Keduanya</option>
+          </select>
+        </div>
+        <div class="field"><label for="alasan">Alasan bergabung</label><input id="alasan" name="alasan" type="text" placeholder="Ceritakan alasan kamu ingin bergabung" required></div>
+        <button type="submit" class="btn form-submit">Lanjut ke WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="join reveal">
+      <div>
+        <h2>Ingin Tahu Lebih Lanjut?</h2>
+        <p>Kunjungi akun Instagram resmi CCS untuk melihat dokumentasi kegiatan sebelum memutuskan untuk mendaftar.</p>
+      </div>
+      <a href="https://www.instagram.com/computerclubsmanthree/" target="_blank" class="btn">Kunjungi Instagram</a>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

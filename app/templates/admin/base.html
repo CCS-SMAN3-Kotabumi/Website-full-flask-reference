@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin CCS</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<main id="konten" class="admin">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="wrap">
+    {% for category, message in messages %}
+      <div style="background:{% if category == 'error' %}var(--error){% else %}var(--success){% endif %}; color:white; padding:12px 16px; border-radius:var(--radius-md); margin-bottom:8px; font-size:14px; font-weight:600;">{{ message }}</div>
+    {% endfor %}
+    </div>
+  {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+</body>
+</html>

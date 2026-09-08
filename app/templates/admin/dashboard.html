@@ -1,0 +1,66 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="wrap">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+    <div>
+      <div class="kicker">Dashboard</div>
+      <h2>Pendaftar CCS</h2>
+    </div>
+    <a href="{{ url_for('admin.logout') }}" class="btn btn-ghost" style="padding:10px 16px;">Logout</a>
+  </div>
+
+  <p style="margin-bottom:20px;">
+    <a href="{{ url_for('admin.list_pengurus') }}" class="btn btn-ghost" style="padding:8px 14px;">Menjar Pengurus</a>
+  </p>
+
+  {% if pendaftar_list %}
+  <table style="width:100%; border-collapse:collapse; background:var(--white); border:1px solid var(--border);">
+    <thead>
+      <tr style="border-bottom:1px solid var(--border); text-align:left;">
+        <th style="padding:12px 14px;">#</th>
+        <th style="padding:12px 14px;">Nama</th>
+        <th style="padding:12px 14px;">Kelas</th>
+        <th style="padding:12px 14px;">Minat</th>
+        <th style="padding:12px 14px;">Status</th>
+        <th style="padding:12px 14px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for p in pendaftar_list %}
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:12px 14px;">{{ p.id }}</td>
+        <td style="padding:12px 14px;">{{ p.nama }}</td>
+        <td style="padding:12px 14px;">{{ p.kelas }}</td>
+        <td style="padding:12px 14px;">{{ p.minat }}</td>
+        <td style="padding:12px 14px;">
+          <span style="background:var(--blue-light); padding:2px 10px; border-radius:12px; font-size:12.5px; font-weight:700; color:var(--navy);">{{ p.status }}</span>
+        </td>
+        <td style="padding:8px 14px; white-space:nowrap;">
+          <form method="POST" action="{{ url_for('admin.set_status', pid=p.id) }}" style="display:inline-block;">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <select name="status">
+              <option value="menunggu" {% if p.status == 'menunggu' %}selected{% endif %}>menunggu</option>
+              <option value="diterima" {% if p.status == 'diterima' %}selected{% endif %}>diterima</option>
+              <option value="ditolak" {% if p.status == 'ditolak' %}selected{% endif %}>ditolak</option>
+            </select>
+            <button type="submit" class="btn" style="padding:6px 12px;">Siap</button>
+          </form>
+          <form method="POST" action="{{ url_for('admin.hapus', pid=p.id) }}" style="display:inline-block;" onsubmit="return confirm('Hapus pendaftar ini?');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-ghost" style="padding:6px 12px;">Hapus</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="join reveal" style="padding:28px 26px;">
+      <div>
+        <h2>Belum ada pendaftar.</h2>
+        <p>Belum ada pendaftar yang tersimpan di database.</p>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

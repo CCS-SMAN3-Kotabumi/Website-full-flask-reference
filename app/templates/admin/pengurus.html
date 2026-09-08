@@ -1,0 +1,54 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="wrap">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+    <div>
+      <div class="kicker">Admin</div>
+      <h2>Pengurus</h2>
+    </div>
+    <a href="{{ url_for('admin.tambah_pengurus') }}" class="btn" style="padding:10px 16px;">+ Tambah Pengurus</a>
+  </div>
+
+  <p style="color:var(--muted); font-size:14px; margin-bottom:18px;">
+    <a href="{{ url_for('admin.dashboard') }}" class="btn btn-ghost" style="padding:6px 12px;">← Balik ke Dashboard</a>
+  </p>
+
+  {% if pengurus_list %}
+  <table style="width:100%; border-collapse:collapse; background:var(--white); border:1px solid var(--border);">
+    <thead>
+      <tr style="border-bottom:1px solid var(--border); text-align:left;">
+        <th style="padding:12px 14px;">Urutan</th>
+        <th style="padding:12px 14px;">Nama</th>
+        <th style="padding:12px 14px;">Jabatan</th>
+        <th style="padding:12px 14px;">Foto</th>
+        <th style="padding:12px 14px;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for pg in pengurus_list %}
+      <tr style="border-bottom:1px solid var(--border);">
+        <td style="padding:12px 14px;">{{ pg.urutan }}</td>
+        <td style="padding:12px 14px;">{{ pg.nama }}</td>
+        <td style="padding:12px 14px;">{{ pg.jabatan }}</td>
+        <td style="padding:12px 14px;">{% if pg.foto %}{{ pg.foto }}{% endif %}</td>
+        <td style="padding:8px 14px; white-space:nowrap;">
+          <a href="{{ url_for('admin.edit_pengurus', pid=pg.id) }}" class="btn btn-ghost" style="padding:6px 12px;">Edit</a>
+          <form method="POST" action="{{ url_for('admin.hapus_pengurus', pid=pg.id) }}" style="display:inline-block;" onsubmit="return confirm('Hapus pengurus ini?');">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button type="submit" class="btn btn-ghost" style="padding:6px 12px;">Hapus</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <div class="join reveal" style="padding:28px 26px;">
+      <div>
+        <h2>Belum ada Pengurus.</h2>
+        <p>Belum ada Pengurus yang tersimpan di database. Klik "+ Tambah Pengurus" untuk mulai.</p>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

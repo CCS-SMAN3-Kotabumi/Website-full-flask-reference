@@ -1,0 +1,50 @@
+{% extends "admin/base.html" %}
+{% block content %}
+<div class="wrap" style="max-width:620px;">
+  <div style="margin-bottom:18px;">
+    <div class="kicker">Admin</div>
+    <h2>{% if pengurus %}Edit{% else %}Tambah{% endif %} Pengurus</h2>
+  </div>
+
+  <div class="form-card" style="padding:30px;">
+    {% if pengurus %}
+    <form method="POST" action="{{ url_for('admin.edit_pengurus', pid=pengurus.id) }}">
+    {% else %}
+    <form method="POST" action="{{ url_for('admin.tambah_pengurus') }}">
+    {% endif %}
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+      <div class="field">
+        <label for="nama">Nama <span style="color:var(--error);">*</span></label>
+        <input id="nama" name="nama" type="text" value="{{ nama }}" maxlength="120" required>
+      </div>
+
+      <div class="field">
+        <label for="jabatan">Jabatan <span style="color:var(--error);">*</span></label>
+        <input id="jabatan" name="jabatan" type="text" value="{{ jabatan }}" maxlength="120" required>
+      </div>
+
+      <div class="field">
+        <label for="urutan">Urutan</label>
+        <input id="urutan" name="urutan" type="number" value="{{ urutan }}">
+      </div>
+
+      <div class="field">
+        <label for="foto">Foto (path/URL aset)</label>
+        <input id="foto" name="foto" type="text" value="{{ foto }}" placeholder="Optional: path gambar di /static/...">
+      </div>
+
+      <div class="field">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea id="deskripsi" name="deskripsi" rows="3" style="width:100%; padding:11px 14px; border:1px solid var(--border); border-radius:var(--radius-sm); font-family:var(--font); font-size:14px; color:var(--ink); background:white;">{{ deskripsi }}</textarea>
+      </div>
+
+      <button type="submit" class="btn form-submit">{% if pengurus %}Siap Ubahan{% else %}Simpan Pengurus{% endif %}</button>
+    </form>
+  </div>
+
+  <p style="margin-top:16px;">
+    <a href="{{ url_for('admin.list_pengurus') }}" class="btn btn-ghost" style="padding:8px 14px;">← Balik ke Daftar Pengurus</a>
+  </p>
+</div>
+{% endblock %}
